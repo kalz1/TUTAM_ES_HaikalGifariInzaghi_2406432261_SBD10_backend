@@ -19,6 +19,10 @@ initDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server berjalan mulus di port:${PORT}`);
-});
+module.exports = app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server berjalan mulus di port:${PORT}`);
+    });
+}
