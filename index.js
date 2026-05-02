@@ -12,8 +12,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors({
     origin: "https://tutam-es-haikal-gifari-inzaghi-2406.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
